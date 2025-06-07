@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqExtension/File
+MimeType=application/x-iso-image;
+Actions=MountISO;UnmountISO;
+X-KDE-Submenu=ISO Tools
+X-KDE-Priority=TopLevel
+
+[Desktop Action MountISO]
+Name=Mount ISO
+Name[en_US]=Mount ISO
+Exec=konsole --hold -e sudo python3 {SCRIPT_PATH} mount %f
+# %f is the placeholder for the selected file's full path.
+# konsole --hold keeps the terminal window open after execution so you can read messages.
+
+[Desktop Action UnmountISO]
+Name=Unmount ISO
+Name[en_US]=Unmount ISO
+Exec=konsole --hold -e sudo python3 {SCRIPT_PATH} unmount %f
